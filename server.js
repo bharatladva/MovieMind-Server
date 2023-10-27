@@ -111,7 +111,7 @@ async function notifyClients() {
 	});
 }
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
 	res.send("HEllo world");
 });
 app.post("/update-data", (req, res) => {
