@@ -7,10 +7,10 @@
 			"use": "@vercel/node"
 		}
 	],
-	"router":[
+	"rewrites":[
 		{
-			"src":"/(.*)",
-			"dest":"/"
+			"source":"/(.*)",
+			"destination":"/"
 		}
 	]
 }
