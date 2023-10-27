@@ -21,7 +21,7 @@ const wss = new WebSocket.Server({ server });
 let data = { message: "Hello from the server!" };
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "*" }));
 
 const uri =
 	// "mongodb+srv://rajbha:rajbha8383@firstcluster.ayrsmsq.mongodb.net/main?retryWrites=true&w=majority"
@@ -111,6 +111,9 @@ async function notifyClients() {
 	});
 }
 
+app.get("/home", (req, res) => {
+	res.send("HEllo world");
+});
 app.post("/update-data", (req, res) => {
 	const newData = req.body;
 
