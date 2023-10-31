@@ -21,12 +21,12 @@ const wss = new WebSocket.Server({ server });
 let data = { message: "Hello from the server!" };
 
 app.use(express.json());
-app.use(cors({ origin: "https://movie-mind-nine.vercel.app" }));
+app.use(cors({ origin: "https://moviemind-ad492.web.app/" }));
 
 const uri =
-	// "mongodb+srv://rajbha:rajbha8383@firstcluster.ayrsmsq.mongodb.net/main?retryWrites=true&w=majority"
+
 	process.env.MONGODB_CONNECT_URI;
-const client = new MongoClient(uri, {});
+const client = new MongoClient(uri, {})
 // await client.connect();
 
 let collection; // Define a global variable to store the MongoDB collection
