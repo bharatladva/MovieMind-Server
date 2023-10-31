@@ -21,7 +21,7 @@ const wss = new WebSocket.Server({ server });
 let data = { message: "Hello from the server!" };
 
 app.use(express.json());
-app.use(cors({ origin: "https://moviemind-ad492.web.app/" }));
+app.use(cors({ origin: "https://moviemind-ad492.web.app" }));
 
 const uri =
 
