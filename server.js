@@ -174,9 +174,7 @@ wss.on("connection", (socket) => {
 	socket.send(JSON.stringify(data));
 });
 
-// bharats code
 
-// ----------------------------------------------------------------------------------------------------------------
 
 app.post("/createUser", async (req, res) => {
 	try {
@@ -380,31 +378,31 @@ app.get("/get-user-data-list", async (req, res) => {
 	}
 });
 
-router.post("/:type/:id", async (req, res) => {
-	const { itemId, itemType, userId } = req.body;
+// router.post("/:type/:id", async (req, res) => {
+// 	const { itemId, itemType, userId } = req.body;
 
-	try {
-		const user = await User.findByIdAndUpdate(
-			userId,
-			{
-				$push: {
-					favorites: {
-						itemId: itemId,
-						itemType: itemType,
-					},
-				},
-			},
-			{ new: true }
-		);
+// 	try {
+// 		const user = await User.findByIdAndUpdate(
+// 			userId,
+// 			{
+// 				$push: {
+// 					favorites: {
+// 						itemId: itemId,
+// 						itemType: itemType,
+// 					},
+// 				},
+// 			},
+// 			{ new: true }
+// 		);
 
-		res.json(user);
-	} catch (error) {
-		console.error("Error occurred:", error);
-		res.status(500).json({ error: "Internal Server Error" });
-	}
-});
+// 		res.json(user);
+// 	} catch (error) {
+// 		console.error("Error occurred:", error);
+// 		res.status(500).json({ error: "Internal Server Error" });
+// 	}
+// });
 
-module.exports = router;
+// module.exports = router;
 
 server.listen(5000, () => {
 	console.log("Server is running on port 5000");
