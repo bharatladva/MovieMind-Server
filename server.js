@@ -26,7 +26,7 @@ app.use(express.json());
 const allowedOrigins = [
 	"https://moviemind-ad492.web.app",
 
-	"https://movie-mind-nine.vercel.app/",
+	"https://movie-mind-nine.vercel.app",
 ];
 
 app.use(
